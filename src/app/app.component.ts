@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CategoryService} from "../category/category.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  categoryService = CategoryService;
   title = 'app works!';
 }

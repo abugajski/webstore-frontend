@@ -1,0 +1,19 @@
+<h2>Categories</h2>
+<div>
+  <label>Category name:</label> <input #categoryName />
+  <button (click)="add(categoryName.value); categoryName.value=''">
+    Add
+  </button>
+</div>
+<button md-button [mdMenuTriggerFor]="menu">Menu</button>
+<md-menu #menu="mdMenu">
+  <button md-menu-item *ngFor="let category of categories">
+    {{category.name}}
+  </button>
+</md-menu>
+<div *ngIf="selectedCategory">
+  <h2>
+    {{selectedCategory.name | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

@@ -8,11 +8,15 @@ import {CategoryService} from "../category/category.service";
 import {CategoryComponent} from "../category/category.component";
 import {MaterialModule} from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { ContentComponent } from '../content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryComponent
+    CategoryComponent,
+    ToolbarComponent,
+    ContentComponent
   ],
   imports: [
     MaterialModule,

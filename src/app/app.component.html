@@ -1,56 +1,7 @@
 <!-- <categories></categories> -->
+<toolbar></toolbar>
+<content></content>
 
-<div class="toolbar"
-     fxLayout="row"
-     fxLayout.xs="column"
-     fxLayoutWrap>
-
-  <button class="usermenu" md-icon-button [mdMenuTriggerFor]="menu">
-    <md-icon>more_vert</md-icon>
-  </button>
-
-  <button class="btntoolbar" md-raised-button [mdMenuTriggerFor]="menu1">Kategorie</button>
-  <md-menu y-position="below" #menu1="mdMenu">
-    <button class="menubutton" md-menu-item>Białko</button>
-    <button class="menubutton" md-menu-item>Carbo</button>
-    <button class="menubutton" md-menu-item>Batony</button>
-    <button class="menubutton" md-menu-item>Gainery</button>
-  </md-menu>
-
-  <button class="btntoolbar" md-raised-button [mdMenuTriggerFor]="menu2">Producenci</button>
-  <md-menu #menu2="mdMenu">
-    <button class="menubutton" md-menu-item>Olimp</button>
-    <button class="menubutton" md-menu-item>HI-TECH</button>
-    <button class="menubutton" md-menu-item>Megabol</button>
-    <button class="menubutton" md-menu-item>Iron Horse</button>
-  </md-menu>
-
-  <button class="btntoolbar" md-raised-button>Promocje</button>
-  <button class="btntoolbar" md-raised-button>O nas</button>
-  <button class="btntoolbar" md-raised-button>Kontakt</button>
-  <button class="btntoolbar" md-raised-button>Zaloguj</button>
-  <button class="btntoolbar" md-raised-button>Zarejestuj</button>
-
-  <div id="search">
-    <input id="inser" type="text" placeholder="Szukaj..."><a href="#"><i class="material-icons">search</i></a>
-  </div>
-</div>
-
-    <div class="contentcontainer"
-         fxLayout="row"
-         fxLayout.xs="column"
-         fxLayoutWrap
-         fxLayoutAlign="start">
-
-    <md-card class="product" *ngFor="let item of [0,1,2,3,4,5,6,7,8]">
-        <md-card-title>100% Pure Whey</md-card-title>
-        <md-card-subtitle>Kategoria: Białko</md-card-subtitle>
-        <md-card-subtitle>Producent: Iron Horse</md-card-subtitle>
-      <img class="tt" md-card-image src="http://www.next-level.pl/userdata/gfx/25a65255f1cd4e41aed97e3da18a6a7f.jpg">
-
-    </md-card>
-
-  </div>
 
 
 

@@ -1,0 +1,63 @@
+.contentcontainer{
+  background-color: #888888;
+}
+
+.product {
+  min-width: 250px;
+  min-height: 350px;
+  width: 250px;
+  height: 350px;
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  box-shadow: 6px 6px 4px #000000;
+  background-color: snow;
+  border-bottom-right-radius: 80px;
+  border-top-left-radius: 50px;
+  text-align: right;
+}
+
+.product img {
+  max-width: 150px;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  75% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  75% {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+.product:hover {
+  background-color: #DDDDDD;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+

@@ -1,7 +1,9 @@
 /**
  * Created by hubertus on 3/15/17.
  */
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { ProducerService } from '../producer/producer.service';
+import { CategoryService } from "../category/category.service";
 
 @Component({
   selector: 'toolbar',
@@ -9,6 +11,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit{
+
+  producers = [];
+  categories = [];
+
+  constructor(private _producerService: ProducerService,
+  private _categoryService: CategoryService){}
+
+  ngOnInit(){
+    this._producerService.getProducers()
+      .subscribe(resProducers => this.producers = resProducers);
+
+    this._categoryService
+      .getCategories()
+      .then(categories => this.categories = categories);
+  }
 
 }

@@ -1,11 +1,11 @@
 .toolbar {
-  padding: 2px;
   background-color: goldenrod;
   width: 100%;
   margin-top: 0px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   border-bottom: ridge;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -13,7 +13,6 @@
 
 .btntoolbar {
   margin: 3px;
-  min-width: 120px;
   background-color: snow;
   border-radius: 5px;
 }
@@ -40,10 +39,6 @@
   margin-left: 3px;
 }
 
-#insert {
-  width: 297px;
-}
-
 .material-icons{
   display: inline-flex;
   vertical-align: middle;
@@ -56,4 +51,12 @@
 
 a:link, a:visited {
   text-decoration: none;
+  color: black;
 }
+
+md-input-container {
+  margin-left: 3px;
+  max-height: 42px;
+  min-width: 297px;
+}
+

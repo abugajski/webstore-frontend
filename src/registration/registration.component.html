@@ -1,0 +1,34 @@
+ <div class="regform">
+   <form class="form" [formGroup]="regForm" (ngSubmit)="onSubmit(regForm.value)">
+     <md-input-container>
+     <input mdInput placeholder="E-mail" formControlName="email">
+     </md-input-container>
+     <div class="error" *ngIf="regForm.controls.email.touched && regForm.controls.email.hasError('required')">Pole nie może być puste.</div>
+     <div class="error" *ngIf="regForm.controls.email.touched && regForm.controls.email.hasError('pattern')">Błędny adres e-mail.</div>
+     <md-input-container>
+       <input mdInput type="password" placeholder="Hasło" formControlName="password">
+     </md-input-container>
+     <div class="error" *ngIf="regForm.controls.password.touched && regForm.controls.password.hasError('required')">Pole nie może być puste.</div>
+     <div class="error" *ngIf="regForm.controls.password.touched && (regForm.controls.password.hasError('minlength') || regForm.controls.password.hasError('maxlength'))">
+       Hasło musi posiadać od 8 do 40 znaków
+     </div>
+     <md-input-container>
+       <input mdInput type="password" placeholder="Potwierdź hasło" formControlName="confirmPassword">
+     </md-input-container>
+     <div class="error" *ngIf="regForm.controls.confirmPassword.touched && regForm.controls.confirmPassword.hasError('required')">Pole nie może być puste.</div>
+       <div class="error" *ngIf="regForm.controls.confirmPassword.touched && regForm.hasError('mismatchedPasswords')">Podane hasła nie są takie same.</div>
+     <md-input-container>
+       <input mdInput placeholder="Imię" formControlName="name">
+     </md-input-container>
+     <div class="error" *ngIf="regForm.controls.name.touched && regForm.controls.name.hasError('required')">Pole nie może być puste.</div>
+     <div class="error" *ngIf="regForm.controls.name.touched && regForm.controls.name.hasError('pattern')">Niepoprawne imię.</div>
+     <md-input-container>
+       <input mdInput placeholder="Nazwisko" formControlName="surname">
+     </md-input-container>
+     <div class="error" *ngIf="regForm.controls.surname.touched && regForm.controls.surname.hasError('required')">Pole nie może być puste.</div>
+     <div class="error" *ngIf="regForm.controls.surname.touched && regForm.controls.surname.hasError('pattern')">Niepoprawne nazwisko.</div>
+     <button type="submit" [disabled]='!regForm.valid' md-raised-button>Zarejestruj</button>
+   </form>
+ </div>
+
+

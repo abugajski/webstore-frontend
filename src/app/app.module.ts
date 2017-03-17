@@ -1,31 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from '@angular/material';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppComponent } from './app.component';
-import {CategoryService} from "../category/category.service";
-import {CategoryComponent} from "../category/category.component";
-import {MaterialModule} from "@angular/material";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { CategoryComponent } from '../category/category.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
-import { ContentComponent } from '../content/content.component';
+import { routingComponents } from './app-routing.module';
+import { ProducerComponent } from '../producer/producer.component';
+import { RegistrationComponent } from '../registration/registration.component';
+
+import { CategoryService } from '../category/category.service';
+import { ProducerService } from '../producer/producer.service';
+import { RegistrationService } from '../registration/registration.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     ToolbarComponent,
-    ContentComponent
+    ProducerComponent,
+    RegistrationComponent,
+    routingComponents
   ],
   imports: [
     MaterialModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [CategoryService],
+  providers: [CategoryService, ProducerService, RegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

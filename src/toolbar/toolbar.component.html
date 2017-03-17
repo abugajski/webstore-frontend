@@ -1,32 +1,29 @@
 <div class="toolbar" fxLayout="row" fxLayout.xs="column" fxLayoutWrap>
-
-  <button class="usermenu" md-icon-button [mdMenuTriggerFor]="menu">
+<div>
+  <a routerLink="/" i class="material-icons">home</a>
+  <button class="usermenu" md-icon-button>
     <md-icon>more_vert</md-icon>
   </button>
-
+</div>
   <button class="btntoolbar" md-raised-button [mdMenuTriggerFor]="menu1">Kategorie</button>
-  <md-menu y-position="below" #menu1="mdMenu">
-    <button class="menubutton" md-menu-item>Białko</button>
-    <button class="menubutton" md-menu-item>Carbo</button>
-    <button class="menubutton" md-menu-item>Batony</button>
-    <button class="menubutton" md-menu-item>Gainery</button>
+  <md-menu #menu1="mdMenu">
+    <button class="menubutton" md-menu-item *ngFor="let category of categories">{{category.name}}</button>
   </md-menu>
 
   <button class="btntoolbar" md-raised-button [mdMenuTriggerFor]="menu2">Producenci</button>
   <md-menu #menu2="mdMenu">
-    <button class="menubutton" md-menu-item>Olimp</button>
-    <button class="menubutton" md-menu-item>HI-TECH</button>
-    <button class="menubutton" md-menu-item>Megabol</button>
-    <button class="menubutton" md-menu-item>Iron Horse</button>
+    <button class="menubutton" md-menu-item *ngFor="let producer of producers">{{producer.name}}</button>
   </md-menu>
-
   <button class="btntoolbar" md-raised-button>Promocje</button>
   <button class="btntoolbar" md-raised-button>O nas</button>
   <button class="btntoolbar" md-raised-button>Kontakt</button>
   <button class="btntoolbar" md-raised-button>Zaloguj</button>
-  <button class="btntoolbar" md-raised-button>Zarejestuj</button>
 
-  <div id="search">
-    <input id="insert" type="text" placeholder="Szukaj..."><a href="#"><i class="material-icons">search</i></a>
-  </div>
+  <a class="btntoolbar" md-button routerLink="/registration" routerLinkActive="active">Zarejestuj</a>
+<div>
+    <md-input-container>
+      <input mdInput placeholder="Szukaj...">
+    </md-input-container>
+  <a href="#"><i class="material-icons">search</i></a>
+</div>
 </div>

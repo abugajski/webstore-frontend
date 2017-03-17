@@ -16,6 +16,7 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { CategoryService } from '../category/category.service';
 import { ProducerService } from '../producer/producer.service';
 import { RegistrationService } from '../registration/registration.service';
+import {MdlModule} from "angular2-mdl";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RegistrationService } from '../registration/registration.service';
     HttpModule,
     FlexLayoutModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MdlModule
   ],
   providers: [CategoryService, ProducerService, RegistrationService],
   bootstrap: [AppComponent]

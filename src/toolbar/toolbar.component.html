@@ -6,8 +6,8 @@
   </button>
 </div>
   <button class="btntoolbar" md-raised-button [mdMenuTriggerFor]="menu1">Kategorie</button>
-  <md-menu #menu1="mdMenu">
-    <button class="menubutton" md-menu-item *ngFor="let category of categories">{{category.name}}</button>
+  <md-menu *ngIf="categories" #menu1="mdMenu">
+    <button class="menubutton"md-menu-item *ngFor="let category of categories">{{category.name}}</button>
   </md-menu>
 
   <button class="btntoolbar" md-raised-button [mdMenuTriggerFor]="menu2">Producenci</button>

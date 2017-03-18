@@ -1,6 +1,61 @@
 <!-- <categories></categories> -->
-<toolbar></toolbar>
-<router-outlet></router-outlet>
+
+<div class="demo-container" mdl-shadow="2">
+  <mdl-layout mdl-layout-mode="waterfall" mdl-layout-fixed-header mdl-layout-header-seamed>
+    <mdl-layout-header>
+      <mdl-layout-header-row>
+        <mdl-layout-title mdl-layout--large-screen-only>
+        <label>Twardziel.pl - suplementy</label>
+        </mdl-layout-title>
+        <mdl-layout-spacer></mdl-layout-spacer>
+        <!-- Navigation. We hide it in small screens. -->
+        <a href="#"><mdl-icon id="searchicon">search</mdl-icon></a>
+        <mdl-textfield id="search"
+                       type="text"
+                       placeholder="Wyszukaj produkt..."
+                       autofocus
+                       autocomplete="name"></mdl-textfield>
+        <nav class="mdl-navigation ">
+
+          <a routerLink="/" i class="material-icons" >home</a>
+          <button  mdl-button #btn1="mdlButton" [mdl-toggle-menu]="m1" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+          <mdl-menu id="user" #m1="mdlMenu" mdl-menu-position="bottom-right">
+            <mdl-menu-item mdl-ripple (click)="action()">Moje konto</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Ustawienia</mdl-menu-item>
+            <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Koszyk</mdl-menu-item>
+            <mdl-menu-item mdl-ripple>Wyloguj</mdl-menu-item>
+          </mdl-menu>
+        </nav>
+      </mdl-layout-header-row>
+    </mdl-layout-header>
+    <mdl-layout-drawer id="drawer">
+      <mdl-layout-title><label id="menulabel">Menu</label></mdl-layout-title>
+      <nav class="mdl-navigation">
+
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple #btn2="mdlButton" [mdl-toggle-menu]="m2">Kategorie</button>
+        <mdl-menu  #m2="mdlMenu" mdl-menu-position="bottom-left">
+          <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider *ngFor="let category of categories">{{category.name}}</mdl-menu-item>
+        </mdl-menu>
+
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple #btn3="mdlButton" [mdl-toggle-menu]="m3">Producenci</button>
+        <mdl-menu  #m3="mdlMenu" mdl-menu-position="bottom-left">
+          <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider *ngFor="let producer of producers">{{producer.name}}</mdl-menu-item>
+        </mdl-menu>
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Promocje</button>
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>O nas</button>
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Kontakt</button>
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Zaloguj</button>
+        <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple routerLink="/registration">Zarejestruj</button>
+
+      </nav>
+    </mdl-layout-drawer>
+    <mdl-layout-content>
+      <router-outlet></router-outlet>
+    </mdl-layout-content>
+  </mdl-layout>
+</div>
+
+
 
 
 

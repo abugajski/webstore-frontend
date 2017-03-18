@@ -20,12 +20,7 @@ export class ToolbarComponent implements OnInit{
   private _categoryService: CategoryService){}
 
   ngOnInit(){
-    this._producerService.getProducers()
-      .subscribe(resProducers => this.producers = resProducers);
 
-    this._categoryService
-      .getCategories()
-      .then(categories => this.categories = categories);
   }
 
 }

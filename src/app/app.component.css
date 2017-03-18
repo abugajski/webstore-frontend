@@ -1,6 +1,32 @@
+#user {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
 
+#drawer {
+  background-color: #888888;
+}
 
+#menulabel {
+  color: white;
+}
 
+#title {
+  color: black;
+}
 
+#search{
+  width: 40vw;
+  margin-right: 50px;
+}
 
+a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#searchicon {
+  margin-right: 10px;
+}
 

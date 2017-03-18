@@ -65,3 +65,20 @@
   animation-iteration-count: infinite;
 }
 
+
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url(http://www.next-level.pl/userdata/gfx/25a65255f1cd4e41aed97e3da18a6a7f.jpg) center no-repeat #abff94;
+}
+
+.demo-card-square.mdl-card {
+  width: 268px;
+  height: 490px;
+}
+
+.demo-card-square {
+  margin: 40px;
+  box-shadow: 6px 6px 4px #444444;
+  border-radius: 15px;
+}

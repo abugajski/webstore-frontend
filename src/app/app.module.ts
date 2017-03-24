@@ -17,10 +17,12 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { CategoryService } from '../category/category.service';
 import { ProducerService } from '../producer/producer.service';
 import { RegistrationService } from '../registration/registration.service';
+import {AdminComponent} from "../admin/admin.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
     CategoryComponent,
     ToolbarComponent,
     ProducerComponent,

@@ -1,0 +1,18 @@
+<md-card>
+  <md-tab-group>
+
+  <md-tab label="Kategorie">
+    <ul>
+      <li *ngFor="let category of categories">{{category.name}}</li>
+    </ul>
+  </md-tab>
+
+  <md-tab label="Producenci">
+    <ul>
+      <li *ngFor="let producer of producers">{{producer.name}}</li>
+    </ul>
+  </md-tab>
+
+</md-tab-group>
+</md-card>
+

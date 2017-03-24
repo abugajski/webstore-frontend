@@ -1,48 +1,82 @@
-<div class="contentcontainer" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutAlign="center">
+<div class="contentcontainer" fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" fxLayoutGap.xs="10px" fxLayoutWrap fxLayoutAlign="space-around center">
 
-  <div class="demo-card-square mdl-card mdl-shadow--2dp" *ngFor="let item of [0,1,2,3,4,5,6,7,8,9]">
-    <div class="mdl-card__title mdl-card--expand">
+  <div class="mdl-card" *ngFor="let productx of products">
+    <div class="mdl-card__title">
+      <h3 class="mdl-card__title-text">{{productx.productPackId.product.name}}</h3>
     </div>
-    <div class="mdl-card__supporting-text">
-      <b>100% Pure Whey</b><br>
-      <b>Kategoria: </b>Białko <br>
-      <b>Producent: </b>Olimp<br>
-      <b>Cena: </b>79,99 zł<br>
+    <div class="mdl-card__media">
+      <img src="data:image/jpeg;base64,{{productx.image}}" width="180" height="180" border="0" alt="" style="padding:10px;">
+
     </div>
-    <div class="mdl-card__actions mdl-card--border">
-
-        <!-- Accent-colored raised button with ripple -->
-        <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
-          Szczegóły
-        </button>
-
-      <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>
+    <div class="description">
+      <p>
+        <span><b>Kategoria:</b> {{productx.productPackId.product.category.name}}</span>
+        <span><b>Producent:</b> {{productx.productPackId.product.producer.name}}</span>
+        <span><b>Cena:</b> {{productx.price}} zł</span>
+        <span><b>Ilość:</b> {{productx.productPackId.pack.size}} {{productx.productPackId.pack.type}}</span>
+      </p>
+    </div>
+    <div class="buttons">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Szczegóły
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
         Do koszyka
       </button>
-
     </div>
   </div>
 
 
-<!--
-  <md-card class="product" *ngFor="let item of [0,1,2,3,4,5,6,7,8,9]">
-    <md-card-title>100% Pure Whey</md-card-title>
-    <md-card-subtitle>
-      <p><b>Kategoria:</b> Białko</p>
-      <p><b>Producent:</b> Iron Horse</p>
-      <p><b>Cena:</b> 81,99 zł</p>
-    </md-card-subtitle>
-    <img md-card-image src="http://www.next-level.pl/userdata/gfx/25a65255f1cd4e41aed97e3da18a6a7f.jpg"/>
-  </md-card>
+  <!--
+  <div class="mdl-card" *ngFor="let item of [0,1,2,3,4,5,6,7,8,9]">
+    <div class="mdl-card__title">
+      <h3 class="mdl-card__title-text">100% Pure Whey</h3>
+    </div>
+    <div class="mdl-card__media">
+      <img src="http://static.sscontent.com/products/453/okygen-sports_100-whey-protein-5lb-2268-g_1.png" width="200" height="160" border="0" alt="" style="padding:10px;">
+    </div>
+    <div class="description">
+      <p>
+        <span><b>Kategoria:</b> Białko</span>
+        <span><b>Producent:</b> Iron Horse</span>
+        <span><b>Cena:</b> 89,99zł</span>
+        <span><b>Waga:</b> 1200g</span>
+      </p>
+    </div>
+    <div class="buttons">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Szczegóły
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Do koszyka
+      </button>
+    </div>
+  </div>
 
-  <md-card class="product" *ngFor="let item of [0,1,2,3,4,5,6,7,8,9]">
-    <md-card-title>100% Pure Whey</md-card-title>
-    <md-card-subtitle>
-      <p><b>Kategoria:</b> Białko</p>
-      <p><b>Producent:</b> Iron Horse</p>
-      <p><b>Cena:</b> 81,99 zł</p>
-    </md-card-subtitle>
-    <img md-card-image src="http://www.next-level.pl/userdata/gfx/25a65255f1cd4e41aed97e3da18a6a7f.jpg"/>
-  </md-card>
-  -->
+  <div class="mdl-card" *ngFor="let item of [0,1,2,3,4,5,6,7]">
+    <div class="mdl-card__title">
+      <h3 class="mdl-card__title-text">100% Pure Whey</h3>
+    </div>
+    <div class="mdl-card__media">
+      <img src="https://sportowesuplementy.pl/upload/400/scitec_100_whey_protein_pro.png" width="200" height="160" border="0" alt=""
+           style="padding:10px;">
+    </div>
+    <div class="description">
+      <p>
+        <span><b>Kategoria:</b> Białko</span>
+        <span><b>Producent:</b> Iron Horse</span>
+        <span><b>Cena:</b> 89,99zł</span>
+        <span><b>Waga:</b> 1200g</span>
+      </p>
+    </div>
+    <div class="buttons">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Szczegóły
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Do koszyka
+      </button>
+    </div>
+  </div>
+-->
 </div>

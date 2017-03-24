@@ -20,7 +20,6 @@ export class CategoryService {
                .catch(this.handleError);
   }
 
-
   getCategory(id: number): Promise<Category> {
     const url = `${this.categoriesUrl}/${id}`;
     return this.http.get(url)

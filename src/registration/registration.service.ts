@@ -14,9 +14,11 @@ export class RegistrationService {
   constructor(private _http: Http) {
   }
 
-  public create(data: FormGroup) {
-    return this._http
-      .post("http://localhost:8080/registration", data, this.headers);
+  public create(data) {
+    return  this._http
+      .post('http://localhost:8080/registration', JSON.stringify(data), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json());
   }
 
 

@@ -14,7 +14,7 @@ import { Headers, Http } from '@angular/http';
 })
 
 export class RegistrationComponent implements OnInit {
-  private headers = new Headers({'Accept': 'application/json','Content-Type': 'application/json'});
+
   regForm: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,
@@ -45,12 +45,7 @@ export class RegistrationComponent implements OnInit {
 }
 
 onSubmit(data){
- console.log(data);
-
-  this.http
-    .post('http://localhost:8080/registration', JSON.stringify(data), {headers: this.headers})
-    .toPromise()
-    .then(res => res.json());
+  this._registrationService.create(data);
 }
 
 

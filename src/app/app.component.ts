@@ -23,7 +23,6 @@ export class AppComponent implements OnInit{
       .getCategories()
       .then(resCategories => this.categories = resCategories);
 
-    console.log("LOLLSDADASDAS" + this.producers);
   }
 
 }

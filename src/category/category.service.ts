@@ -45,7 +45,7 @@ export class CategoryService {
   }
 
   update(category: Category): Promise<Category> {
-    const url = `${this.categoriesUrl}/${category.id}`;
+    const url = `${this.categoriesUrl}`;
     return this.http
       .put(url, JSON.stringify(category), {headers: this.headers})
       .toPromise()

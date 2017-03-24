@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CategoryService } from '../category/category.service';
 import { ProducerService } from '../producer/producer.service';
+import {Category} from "../category/category.model";
 
 @Component({
   selector: 'app-root',

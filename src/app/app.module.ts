@@ -17,6 +17,7 @@ import { CategoryService } from '../category/category.service';
 import { ProducerService } from '../producer/producer.service';
 import { RegistrationService } from '../registration/registration.service';
 import { ContentService } from '../content/content.service';
+import {AdminComponent} from "../admin/admin.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ContentService } from '../content/content.service';
     CategoryComponent,
     ProducerComponent,
     RegistrationComponent,
+    AdminComponent,
     routingComponents
   ],
   imports: [

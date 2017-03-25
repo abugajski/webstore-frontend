@@ -1,1 +1,10 @@
-
+<div class="cont">
+  <button mdl-button mdl-button-type="raised" mdl-colored="accent" (click)="addProducer()">Dodaj producenta</button>
+  <button mdl-button mdl-button-type="raised" mdl-colored="accent" (click)="saveProducerChanges()">Zapisz zmiany</button>
+  <div *ngFor="let producer of producers">
+    <md-input-container >
+      <input mdInput [(ngModel)]="producer.name">
+    </md-input-container>
+    <button mdl-button mdl-button-type="mini-fab" mdl-colored="accent" (click)="deleteProducer(producer)"><md-icon>delete</md-icon></button>
+  </div>
+</div>

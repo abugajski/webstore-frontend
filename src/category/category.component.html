@@ -1,19 +1,11 @@
-<h2>Categories</h2>
-<div>
-  <label>Category name:</label> <input #categoryName />
-  <button (click)="add(categoryName.value); categoryName.value=''">
-    Add
-  </button>
+<div class="cont">
+  <button mdl-button mdl-button-type="raised" mdl-colored="accent"  (click)="addCategory()">Dodaj kategorię</button>
+  <button mdl-button mdl-button-type="raised" mdl-colored="accent"  (click)="saveCategoryChanges()">Zapisz zmiany</button>
+  <div *ngFor="let category of categories">
+    <md-input-container >
+      <input mdInput [(ngModel)]="category.name">
+    </md-input-container>
+    <button mdl-button mdl-button-type="mini-fab" mdl-colored="accent" (click)="deleteCategory(category)"><md-icon>delete</md-icon></button>
+  </div>
 </div>
-<button md-button [mdMenuTriggerFor]="menu">Menu</button>
-<md-menu #menu="mdMenu">
-  <button md-menu-item *ngFor="let category of categories">
-    {{category.name}}
-  </button>
-</md-menu>
-<div *ngIf="selectedCategory">
-  <h2>
-    {{selectedCategory.name | uppercase}}
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
+

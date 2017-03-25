@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
-
 import { Category }                from './category.model';
 import { CategoryService }         from '../category/category.service';
 
@@ -11,19 +9,52 @@ import { CategoryService }         from '../category/category.service';
   styleUrls: [ '../category/category.component.css' ]
 })
 export class CategoryComponent implements OnInit {
-  categories: Category[];
-  selectedCategory: Category;
 
-  constructor(
-    private categoryService: CategoryService,
-    //private router: Router
-    ) { }
+  categories = [];
 
+  constructor(private _categoryService: CategoryService) { }
+
+  ngOnInit(){
+    this._categoryService
+      .getCategories()
+      .then(resCategories => this.categories = resCategories);
+  }
+
+  addCategory(){
+    var category = new Category();
+    category.name = null;
+    category.id = null;
+    this.categories.push(category);
+  }
+
+  saveCategoryChanges(){
+    console.log("saveChanges");
+    for (let category of this.categories){
+      if(category.id == null){
+        this._categoryService.create(category.name);
+      }else {
+        this._categoryService.update(category);
+      }
+    }
+  }
+
+  deleteCategory(category: Category){
+    /*
+     * TODO
+     * delete from category array if categoryService.delete proceed well
+     * */
+    this._categoryService.delete(category.id);
+    var index = this.categories.indexOf(category);
+    this.categories.splice(index,1);
+  }
+
+/*
   getCategories(): void {
     this.categoryService
         .getCategories()
         .then(categories => this.categories = categories);
   }
+
 
   add(name: string): void {
     name = name.trim();
@@ -43,16 +74,5 @@ export class CategoryComponent implements OnInit {
           if (this.selectedCategory === category) { this.selectedCategory = null; }
         });
   }
-
-  ngOnInit(): void {
-    this.getCategories();
-  }
-
-  onSelect(category: Category): void {
-    this.selectedCategory = category;
-  }
-
-  gotoDetail(): void {
-    //this.router.navigate(['/detail', this.selectedCategory.id]);
-  }
+*/
 }

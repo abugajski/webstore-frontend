@@ -4,7 +4,7 @@
 import { Injectable } from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {ProducerModel} from "./producer.model";
+import {Producer} from "./producer.model";
 import {Observable} from "rxjs";
 import {error} from "selenium-webdriver";
 
@@ -12,7 +12,7 @@ import {error} from "selenium-webdriver";
 export class ProducerService{
 
   private headers = new Headers({'Accept': 'application/json','Content-Type': 'application/json'});
-  private categoriesUrl = 'http://localhost:8080/producers';  // URL to web api
+  private producersUrl = 'http://localhost:8080/producers';  // URL to web api
 
   constructor(private _http: Http){}
 
@@ -21,10 +21,27 @@ export class ProducerService{
       .map((response: Response) => response.json());
   }
 
-  create(name: string): Observable<ProducerModel> {
+  create(name: string): Promise<Producer> {
     return this._http
-      .post(this.categoriesUrl, JSON.stringify({name: name}), {headers: this.headers})
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+      .post(this.producersUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Producer);
   }
+
+  update(category: Producer): Promise<Producer> {
+    const url = `${this.producersUrl}`;
+    return this._http
+      .put(url, JSON.stringify(category), {headers: this.headers})
+      .toPromise()
+      .then(() => category);
+  }
+
+  delete(id: number): Promise<void> {
+    const url = `${this.producersUrl}/${id}`;
+    return this._http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null);
+  }
+
+
 }

@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from '../content/content.component';
 import { RegistrationComponent } from '../registration/registration.component';
-import {AdminComponent} from "../admin/admin.component";
+import { AdminComponent } from "../admin/admin.component";
+import { CategoryComponent } from '../category/category.component';
+import { ProducerComponent } from '../producer/producer.component';
 
 const routes: Routes = [
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', component: AdminComponent, children: [
+    {path: 'cat', component: CategoryComponent, outlet: 'admcat'},
+    {path: 'prod', component: ProducerComponent, outlet: 'admcat'}
+  ]},
   {path: 'registration', component: RegistrationComponent},
-  {path: '', component: ContentComponent}
+  {path: '', component: ContentComponent},
 ];
 
 @NgModule({
@@ -21,4 +26,4 @@ const routes: Routes = [
 
 export class AppRoutingModule{
 }
-export const routingComponents = [ContentComponent, RegistrationComponent]
+export const routingComponents = [ContentComponent, RegistrationComponent, CategoryComponent, ProducerComponent]

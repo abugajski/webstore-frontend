@@ -1,25 +1,7 @@
-<md-tab-group>
-    <md-tab label="Kategorie">
-      <button md-raised-button (click)="addCategory()">Dodaj kategorie</button>
-      <div *ngFor="let category of categories">
-        <md-input-container >
-            <input mdInput [(ngModel)]="category.name">
-        </md-input-container>
-        <button md-mini-fab (click)="deleteCategory(category)"><md-icon>delete</md-icon></button>
-      </div>
-
-      <button md-raised-button (click)="saveChanges()">Zapisz zamiany</button>
-    </md-tab>
-    <md-tab label="Producenci">
-      <button md-raised-button>Dodaj producenta</button>
-      <ul>
-        <div *ngFor="let producer of producers">
-          <span >{{producer.name}} | <button md-raised-button>Edytuj</button></span>
-
-        </div>
-
-      </ul>
-    </md-tab>
-</md-tab-group>
+<div class="tabs">
+    <button mdl-button mdl-button-type="raised" mdl-colored="accent" (click)="fun2()">Kategorie</button>
+    <button mdl-button mdl-button-type="raised" mdl-colored="accent" (click)="fun()">Producenci</button>
+</div>
+  <router-outlet name="admcat"></router-outlet>
 
 

@@ -1,4 +1,13 @@
 .tabs {
-  display: table;
-  margin: 0 auto;
+  width: 100%;;
+  background-color: #333333;
+  text-align: center;
+  padding: 3px;
 }
+
+.mdl-button {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 150px;
+}
+

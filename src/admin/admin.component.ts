@@ -24,5 +24,8 @@ export class AdminComponent {
     this.router.navigate(['/admin', {outlets: {admcat: 'cat'}}]);
   }
 
+  fun4(){
+    this.router.navigate(['/admin', {outlets: {admcat: 'flav'}}]);
+  }
 
 }

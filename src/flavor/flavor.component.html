@@ -1,0 +1,10 @@
+<div class="cont">
+  <button mdl-button mdl-button-type="raised" mdl-colored="accent" (click)="addFlavor()">Dodaj smak</button>
+  <button mdl-button mdl-button-type="raised" mdl-colored="accent" (click)="saveFlavorChanges()">Zapisz zmiany</button>
+  <div *ngFor="let flavor of flavors">
+    <md-input-container >
+      <input mdInput [(ngModel)]="flavor.name">
+    </md-input-container>
+    <button mdl-button mdl-button-type="mini-fab" mdl-colored="accent" (click)="deleteFlavor(flavor)"><md-icon>delete</md-icon></button>
+  </div>
+</div>

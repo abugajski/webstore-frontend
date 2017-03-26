@@ -12,12 +12,14 @@ import { CategoryComponent } from '../category/category.component';
 import { routingComponents } from './app-routing.module';
 import { ProducerComponent } from '../producer/producer.component';
 import { RegistrationComponent } from '../registration/registration.component';
+import { AdminComponent } from "../admin/admin.component";
+import { FlavorComponent } from '../flavor/flavor.component';
 
 import { CategoryService } from '../category/category.service';
 import { ProducerService } from '../producer/producer.service';
 import { RegistrationService } from '../registration/registration.service';
+import { FlavorService } from '../flavor/flavor.service';
 import { ContentService } from '../content/content.service';
-import {AdminComponent} from "../admin/admin.component";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import {AdminComponent} from "../admin/admin.component";
     ProducerComponent,
     RegistrationComponent,
     AdminComponent,
+    FlavorComponent,
     routingComponents
   ],
   imports: [
@@ -38,7 +41,7 @@ import {AdminComponent} from "../admin/admin.component";
     ReactiveFormsModule,
     MdlModule
   ],
-  providers: [CategoryService, ProducerService, RegistrationService, ContentService],
+  providers: [CategoryService, ProducerService, RegistrationService, ContentService, FlavorService],
   bootstrap: [AppComponent]
 })
 

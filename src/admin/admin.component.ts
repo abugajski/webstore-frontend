@@ -16,7 +16,7 @@ export class AdminComponent {
 
   constructor(private router: Router){}
 
-  fun(){
+  fun1(){
     this.router.navigate(['/admin', {outlets: {admcat: 'prod'}}]);
   }
 
@@ -24,8 +24,24 @@ export class AdminComponent {
     this.router.navigate(['/admin', {outlets: {admcat: 'cat'}}]);
   }
 
+  fun3(){
+    this.router.navigate(['/admin', {outlets: {admcat: 'producen'}}]);
+  }
+
   fun4(){
     this.router.navigate(['/admin', {outlets: {admcat: 'flav'}}]);
+  }
+
+  fun5(){
+    this.router.navigate(['/admin', {outlets: {admcat: 'zam'}}]);
+  }
+
+  fun6(){
+    this.router.navigate(['/admin', {outlets: {admcat: 'dos'}}]);
+  }
+
+  fun7(){
+    this.router.navigate(['/admin', {outlets: {admcat: 'klien'}}]);
   }
 
 }

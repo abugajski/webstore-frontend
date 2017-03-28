@@ -47,10 +47,6 @@ export class FlavorComponent {
   }
 
   deleteFlavor(flavor: Flavor){
-    /*
-     * TODO
-     *
-     * */
     if(flavor.id != null){
       this._flavorService.delete(flavor.id);
     }
@@ -61,7 +57,7 @@ export class FlavorComponent {
   getFlavors(): void{
     this._flavorService
       .getFlavors()
-      .subscribe(resProducers => this.flavors = resProducers);
+      .subscribe(resFlavors => this.flavors = resFlavors);
   }
 
 }

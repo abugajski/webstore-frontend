@@ -12,14 +12,13 @@ import { Producer } from './producer.model';
 })
 
 export class ProducerComponent implements OnInit{
+
   producers = [];
 
   constructor(private _producerService: ProducerService){}
 
   ngOnInit(){
-    this._producerService
-      .getProducers()
-      .subscribe(resProducers => this.producers = resProducers);
+    this.getProducers();
   }
 
   addProducer(){
@@ -32,22 +31,33 @@ export class ProducerComponent implements OnInit{
   saveProducerChanges(){
     console.log("saveChanges");
     for (let producer of this.producers){
-      if(producer.id === null){
-        this._producerService.create(producer.name);
+      if(producer.id === null && producer.name != null){
+        this._producerService.create(producer.name)
+          .then(() => {this.getProducers();});
       }else {
-        this._producerService.update(producer);
+        if(producer.name != null && producer.name != ''){
+          this._producerService.update(producer)
+            .then(() => {this.getProducers();});
+        }
+        else {
+          this.getProducers();
+        }
       }
     }
   }
 
   deleteProducer(producer: Producer){
-    /*
-     * TODO
-     *
-     * */
-    this._producerService.delete(producer.id);
+    if(producer.id != null){
+      this._producerService.delete(producer.id);
+    }
     var index = this.producers.indexOf(producer);
     this.producers.splice(index,1);
+  }
+
+  getProducers(): void{
+    this._producerService
+      .getProducers()
+      .subscribe(resProducers => this.producers = resProducers);
   }
 
 }

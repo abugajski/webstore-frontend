@@ -6,6 +6,7 @@ import { AdminComponent } from "../admin/admin.component";
 import { CategoryComponent } from '../category/category.component';
 import { ProducerComponent } from '../producer/producer.component';
 import { FlavorComponent } from '../flavor/flavor.component';
+import { MasterDetailComponent } from '../master_detail/master_detail.component';
 
 const routes: Routes = [
   {path: 'admin', component: AdminComponent, children: [
@@ -15,6 +16,7 @@ const routes: Routes = [
   ]},
   {path: 'registration', component: RegistrationComponent},
   {path: '', component: ContentComponent},
+  {path: 'product/:id', component: MasterDetailComponent},
 ];
 
 @NgModule({

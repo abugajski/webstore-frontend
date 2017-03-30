@@ -2,22 +2,22 @@
 
   <div class="mdl-card" *ngFor="let productx of products">
     <div class="mdl-card__title">
-      <h3 class="mdl-card__title-text">{{productx.productPackId.product.name}}</h3>
+      <h3 class="mdl-card__title-text">{{productx.product.name}}</h3>
     </div>
     <div class="mdl-card__media">
-      <img src="data:image/jpeg;base64,{{productx.image}}" width="180" height="180" border="0" alt="" style="padding:10px;">
+      <img src="data:image/jpeg;base64,{{productx.image}}" width="140" height="140" border="0" alt="" style="padding:10px;">
 
     </div>
     <div class="description">
       <p>
-        <span><b>Kategoria:</b> {{productx.productPackId.product.category.name}}</span>
-        <span><b>Producent:</b> {{productx.productPackId.product.producer.name}}</span>
-        <span><b>Cena:</b> {{productx.price}} zł</span>
-        <span><b>Ilość:</b> {{productx.size}} {{productx.productPackId.pack.type}}</span>
+        <span><b>Kategoria:</b> {{productx.product.category.name}}</span>
+        <span><b>Producent:</b> {{productx.product.producer.name}}</span>
+        <span><b>Cena:</b> {{productx.price | number : '.2-2'}} zł</span>
+        <span><b>Ilość:</b> {{productx.size}} {{productx.type}}</span>
       </p>
     </div>
     <div class="buttons">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" [routerLink]="['/product', productx.id]">
         Szczegóły
       </button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

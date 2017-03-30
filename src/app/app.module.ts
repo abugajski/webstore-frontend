@@ -20,6 +20,8 @@ import { ProducerService } from '../producer/producer.service';
 import { RegistrationService } from '../registration/registration.service';
 import { FlavorService } from '../flavor/flavor.service';
 import { ContentService } from '../content/content.service';
+import { DetailService } from '../master_detail/master_detail.service';
+import {MasterDetailComponent} from "../master_detail/master_detail.component";
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { ContentService } from '../content/content.service';
     RegistrationComponent,
     AdminComponent,
     FlavorComponent,
+    MasterDetailComponent,
     routingComponents
   ],
   imports: [
@@ -41,7 +44,7 @@ import { ContentService } from '../content/content.service';
     ReactiveFormsModule,
     MdlModule
   ],
-  providers: [CategoryService, ProducerService, RegistrationService, ContentService, FlavorService],
+  providers: [CategoryService, ProducerService, RegistrationService, ContentService, FlavorService, DetailService],
   bootstrap: [AppComponent]
 })
 
